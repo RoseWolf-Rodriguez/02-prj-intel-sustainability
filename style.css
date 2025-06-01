@@ -11,3 +11,42 @@ header {
   /* Add a gradient background from gray to dark navy blue */
   background: linear-gradient(to bottom, #cccccc, #43d6fb);
 }
+
+/* Style the timeline section to scroll horizontally */
+section {
+  /* Use flexbox to arrange cards in a row */
+  display: flex;
+  flex-direction: row;
+  /* Allow horizontal scrolling if cards overflow */
+  overflow-x: auto;
+  /* Add some space below the section */
+  margin-bottom: 20px;
+  /* Optional: Add padding for better appearance */
+  padding: 20px 0;
+  /* Prevent vertical scrollbars */
+  overflow-y: hidden;
+}
+
+/* Style each timeline card */
+section > div {
+  /* Add a border and background for visibility */
+  border: 1px solid #ccc;
+  background: #fff;
+  /* Add some space between cards */
+  margin-right: 16px;
+  /* Add padding inside the card */
+  padding: 16px;
+  /* Set a fixed width for each card */
+  width: 250px;
+  /* Make corners slightly rounded */
+  border-radius: 8px;
+  /* Add a little shadow for depth */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  /* Prevent cards from shrinking too small */
+  flex-shrink: 0;
+}
+
+/* Optional: Remove right margin from the last card */
+section > div:last-child {
+  margin-right: 0;
+}
