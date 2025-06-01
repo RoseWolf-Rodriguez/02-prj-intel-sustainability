@@ -8,6 +8,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Optional: Add a background color for visibility */
-  background-color: #f0f4f8;
+  /* Add a gradient background from gray to dark navy blue */
+  background: linear-gradient(to bottom, #cccccc, #43d6fb);
 }
