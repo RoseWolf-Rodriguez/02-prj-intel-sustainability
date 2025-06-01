@@ -12,6 +12,14 @@ header {
   background: linear-gradient(to bottom, #cccccc, #43d6fb);
 }
 
+/* Center the content inside the header */
+header > div {
+  /* Center the div horizontally */
+  margin: 0 auto;
+  /* Center all text inside the div */
+  text-align: center;
+}
+
 /* Style the timeline section to scroll horizontally */
 section {
   /* Use flexbox to arrange cards in a row */
@@ -72,6 +80,10 @@ section > div img {
 /* Use Roboto for all body text */
 body {
   font-family: 'Roboto', Arial, sans-serif;
+  /* Add padding around the whole page */
+  padding: 24px;
+  /* Optional: Prevent horizontal scroll caused by padding */
+  box-sizing: border-box;
 }
 
 /* Use IBM Plex Sans for all headings */
