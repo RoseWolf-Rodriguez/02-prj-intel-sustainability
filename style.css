@@ -64,6 +64,9 @@ section > div {
   position: relative; /* Needed for overlay positioning */
   /* Make each timeline card snap into place */
   scroll-snap-align: start;
+  transition: 
+    transform 0.3s,
+    box-shadow 0.3s;
 }
 
 /* Optional: Remove right margin from the last card */
@@ -95,7 +98,7 @@ section > div .card-overlay {
   /* Semi-transparent dark background */
   background: rgba(10, 25, 49, 0.85);
   /* White text for contrast */
-  color: transparent; /* Hide the text initially for typewriter effect */
+  color: #fff;
   /* Center text vertically and horizontally */
   display: flex;
   align-items: center;
@@ -111,23 +114,40 @@ section > div .card-overlay {
   /* Padding for readability */
   padding: 16px;
   box-sizing: border-box;
-  font-size: 1rem;
+  font-size: 1.15rem; /* Make overlay text a bit bigger for readability */
+  /* Add a slight scale effect for animation */
+  transform: scale(0.97);
+  transition: 
+    opacity 0.3s,
+    transform 0.3s;
 }
 
 /* Show overlay on hover */
 section > div:hover .card-overlay {
   opacity: 1;
   pointer-events: auto;
-  color: #fff; /* Show the text color when typing */
+  /* Slightly scale up the overlay for effect */
+  transform: scale(1.04);
+  /* Add a subtle box-shadow for pop */
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
 }
 
-/* Typewriter effect: show text letter by letter */
-.typewriter-text {
-  /* Use monospace font for typewriter look (optional) */
-  font-family: inherit, monospace;
-  /* Keep white-space for line breaks */
-  white-space: pre-line;
-  /* Animate the text (handled by JavaScript) */
+/* Add a hover effect to the card itself */
+section > div:hover {
+  /* Slightly lift the card and add a shadow */
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  transition: 
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+/* Smooth transition for cards */
+section > div {
+  /* ...existing code... */
+  transition: 
+    transform 0.3s,
+    box-shadow 0.3s;
 }
 
 /* Use Roboto for all body text */
@@ -189,4 +209,16 @@ body::before {
   section > div:last-child {
     margin-bottom: 0;
   }
+}
+
+/* Add more space between the footer and the cards */
+footer {
+  /* Add space above the footer */
+  margin-top: 40px;
+  /* Center the footer text */
+  text-align: center;
+  /* Optional: Make footer text a bit smaller */
+  font-size: 0.95em;
+  /* Optional: Add a lighter color for footer text */
+  color: #333;
 }

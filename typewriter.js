@@ -1,32 +1,33 @@
-// This script adds a typewriter effect to the overlay text on each card
+// Simple typewriter effect for beginners
 
-// Function to type out text letter by letter
-function typeWriter(element, text, speed = 50) { // Slower typing speed
-  element.textContent = ""; // Clear previous text
+// This function types out the text one letter at a time
+function typeWriter(element, text) {
+  element.textContent = ""; // Start with empty text
   let i = 0;
-  function type() {
+  // This function adds one letter at a time
+  function addLetter() {
     if (i < text.length) {
-      element.textContent += text.charAt(i);
+      element.textContent += text[i];
       i++;
-      setTimeout(type, speed);
+      setTimeout(addLetter, 70); // Slow speed for beginners to read
     }
   }
-  type();
+  addLetter();
 }
 
-// Find all overlays
+// For each card overlay, set up the typewriter effect
 document.querySelectorAll('.card-overlay').forEach(function(overlay) {
-  // Get the span for typewriter text
+  // Find the span where the text will appear
   const typeSpan = overlay.querySelector('.typewriter-text');
-  // Get the full text from data-text attribute
+  // Get the text to display from the data-text attribute
   const fullText = overlay.getAttribute('data-text') || "";
 
-  // When mouse enters, start typewriter effect
+  // When the mouse enters the card, start the typewriter effect
   overlay.parentElement.addEventListener('mouseenter', function() {
     typeWriter(typeSpan, fullText);
   });
 
-  // When mouse leaves, clear the text
+  // When the mouse leaves the card, clear the text
   overlay.parentElement.addEventListener('mouseleave', function() {
     typeSpan.textContent = "";
   });
