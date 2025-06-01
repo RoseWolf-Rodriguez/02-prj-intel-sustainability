@@ -95,7 +95,7 @@ section > div .card-overlay {
   /* Semi-transparent dark background */
   background: rgba(10, 25, 49, 0.85);
   /* White text for contrast */
-  color: #fff;
+  color: transparent; /* Hide the text initially for typewriter effect */
   /* Center text vertically and horizontally */
   display: flex;
   align-items: center;
@@ -118,6 +118,16 @@ section > div .card-overlay {
 section > div:hover .card-overlay {
   opacity: 1;
   pointer-events: auto;
+  color: #fff; /* Show the text color when typing */
+}
+
+/* Typewriter effect: show text letter by letter */
+.typewriter-text {
+  /* Use monospace font for typewriter look (optional) */
+  font-family: inherit, monospace;
+  /* Keep white-space for line breaks */
+  white-space: pre-line;
+  /* Animate the text (handled by JavaScript) */
 }
 
 /* Use Roboto for all body text */
