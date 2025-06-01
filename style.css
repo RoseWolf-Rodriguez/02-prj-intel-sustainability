@@ -133,3 +133,29 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'IBM Plex Sans', Arial, sans-serif;
 }
+
+/* Make the timeline cards stack vertically on small screens */
+@media (max-width: 700px) {
+  section {
+    /* Stack cards in a column */
+    flex-direction: column;
+    /* Remove horizontal scroll and snapping */
+    overflow-x: visible;
+    max-width: 100%;
+    scroll-snap-type: none;
+  }
+
+  section > div {
+    /* Remove right margin between cards, add bottom margin instead */
+    margin-right: 0;
+    margin-bottom: 16px;
+    /* Make cards take full width */
+    width: 100%;
+    /* Remove scroll snap alignment */
+    scroll-snap-align: none;
+  }
+
+  section > div:last-child {
+    margin-bottom: 0;
+  }
+}
