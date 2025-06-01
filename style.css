@@ -21,10 +21,15 @@ section {
   overflow-x: auto;
   /* Add some space below the section */
   margin-bottom: 20px;
-  /* Optional: Add padding for better appearance */
+  /* Add padding for better appearance */
   padding: 20px 0;
   /* Prevent vertical scrollbars */
   overflow-y: hidden;
+  /* Show only 4 cards at a time (4 x 250px + 3 x 16px margin) */
+  max-width: calc(4 * 250px + 3 * 16px);
+  /* Center the timeline section */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Style each timeline card */
@@ -49,4 +54,17 @@ section > div {
 /* Optional: Remove right margin from the last card */
 section > div:last-child {
   margin-right: 0;
+}
+
+/* Make images inside timeline cards square and cropped */
+section > div img {
+  /* Set width and height to fill the card width and make it square */
+  width: 100%;
+  height: 250px;
+  /* Crop the image if it's not square */
+  object-fit: cover;
+  /* Add rounded corners to match the card */
+  border-radius: 6px;
+  /* Add some space below the image */
+  margin-bottom: 12px;
 }
