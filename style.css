@@ -127,11 +127,32 @@ body {
   padding: 24px;
   /* Optional: Prevent horizontal scroll caused by padding */
   box-sizing: border-box;
+  position: relative; /* Needed for overlay positioning */
+  z-index: 1; /* Make sure content is above the overlay */
 }
 
 /* Use IBM Plex Sans for all headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'IBM Plex Sans', Arial, sans-serif;
+}
+
+/* Add a background image overlay to the whole page */
+body::before {
+  content: "";
+  /* Position the overlay to cover the whole page */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* Set the background image and make it cover the screen */
+  background: url('img/background.jpg') center center / cover no-repeat;
+  /* Make the image semi-transparent */
+  opacity: 0.25;
+  /* Place the overlay behind all content */
+  z-index: 0;
+  /* Prevent the overlay from blocking clicks */
+  pointer-events: none;
 }
 
 /* Make the timeline cards stack vertically on small screens */
