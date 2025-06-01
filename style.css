@@ -68,3 +68,13 @@ section > div img {
   /* Add some space below the image */
   margin-bottom: 12px;
 }
+
+/* Use Roboto for all body text */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* Use IBM Plex Sans for all headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'IBM Plex Sans', Arial, sans-serif;
+}
