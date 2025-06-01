@@ -1,1 +1,13 @@
 /* Add your CSS here */
+
+/* Make the header fill the top of the screen */
+header {
+  /* Take at least the full height of the viewport */
+  min-height: 100vh;
+  /* Center content vertically and horizontally */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Optional: Add a background color for visibility */
+  background-color: #f0f4f8;
+}
