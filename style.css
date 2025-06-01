@@ -52,7 +52,7 @@ section > div {
   /* Add some space between cards */
   margin-right: 16px;
   /* Add padding inside the card */
-  padding: 16px;
+  padding: 28px;
   /* Set a fixed width for each card */
   width: 250px;
   /* Make corners slightly rounded */
@@ -201,13 +201,24 @@ body::before {
     margin-right: 0;
     margin-bottom: 16px;
     /* Make cards take full width */
-    width: 100%;
-    /* Remove scroll snap alignment */
-    scroll-snap-align: none;
+    width: 100%; /* Make cards take full width */
+    max-width: 100%; /* Prevent overflow */
+    min-width: 0;    /* Allow shrinking */
+    box-sizing: border-box; /* Include padding in width */
   }
 
   section > div:last-child {
     margin-bottom: 0;
+  }
+
+  section > div img {
+    /* Make images fit the new card width and keep square shape */
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1; /* Keep images square */
+    max-width: 100%;
+    min-width: 0;
+    object-fit: cover;
   }
 }
 
